@@ -65,7 +65,7 @@ export class PageTemplate {
         return `
             <div class="container">
                 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
+                    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Pagaminta Lietuvoje</p>
                     <ul class="nav col-md-4 justify-content-end">${HTML}</ul>
                 </footer>
             </div>`;
