@@ -44,11 +44,23 @@ export class PageTemplate {
                         </a>
                     </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">${HTML}</ul>
-                    <div class="col-md-3 text-end">
-                        <a href="/login" class="btn btn-outline-primary me-2">Login</a>
-                        <a href="/register" class="btn btn-primary">Register</a>
-                    </div>
+                    ${this.userMenu()}
                 </header>
+            </div>`;
+    }
+
+    userMenu() {
+        if (this.req.user.isLoggedIn) {
+            return `
+                <div class="col-md-3 text-end">
+                    <a href="/admin" class="btn btn-primary">Dashboard</a>
+                </div>`;
+        }
+
+        return `
+            <div class="col-md-3 text-end">
+                <a href="/login" class="btn btn-outline-primary me-2">Login</a>
+                <a href="/register" class="btn btn-primary">Register</a>
             </div>`;
     }
 
@@ -65,7 +77,7 @@ export class PageTemplate {
         return `
             <div class="container">
                 <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Pagaminta Lietuvoje</p>
+                    <p class="col-md-4 mb-0 text-body-secondary">&copy; 2025 Company, Inc</p>
                     <ul class="nav col-md-4 justify-content-end">${HTML}</ul>
                 </footer>
             </div>`;
