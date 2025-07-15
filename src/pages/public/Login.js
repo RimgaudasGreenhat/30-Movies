@@ -7,7 +7,7 @@ export class PageLogin extends PageTemplate {
         super(req);
         this.pageJS = 'login';
     }
-    main() {
+    async main() {
         return `
             <main>
                 ${pageTitle('Login')}

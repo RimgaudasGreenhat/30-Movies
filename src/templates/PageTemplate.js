@@ -19,6 +19,7 @@ export class PageTemplate {
                 <meta name="apple-mobile-web-app-title" content="Coming soon" />
                 <link rel="manifest" href="/favicon/site.webmanifest" />
                 <link rel="stylesheet" href="/css/bootstrap.min.css">
+                <link rel="stylesheet" href="/css/custom.css">
             </head>`;
     }
 
@@ -91,7 +92,7 @@ export class PageTemplate {
         return `<script src="/js/${this.pageJS}.js" type="module"></script>`;
     }
 
-    main() {
+    async main() {
         return `
             <main class="container">
                 <div class="row">
@@ -102,14 +103,14 @@ export class PageTemplate {
             </main>`;
     }
 
-    render() {
+    async render() {
         return `
             <!DOCTYPE html>
             <html lang="en">
             ${this.head()}
             <body>
                 ${this.header()}
-                ${this.main()}
+                ${await this.main()}
                 ${this.footer()}
                 ${this.script()}
             </body>

@@ -7,11 +7,11 @@ import { PageRegister } from '../pages/public/Register.js';
 
 export const publicPageRouter = express.Router();
 
-publicPageRouter.get('/', (req, res) => res.send(new PageHome(req).render()));
+publicPageRouter.get('/', async (req, res) => res.send(await new PageHome(req).render()));
 
-publicPageRouter.get('/movies', (req, res) => res.send(new PageMovies(req).render()));
+publicPageRouter.get('/movies', async (req, res) => res.send(await new PageMovies(req).render()));
 
-publicPageRouter.get('/categories', (req, res) => res.send(new PageCategories(req).render()));
+publicPageRouter.get('/categories', async (req, res) => res.send(await new PageCategories(req).render()));
 
-publicPageRouter.get('/login', (req, res) => res.send(new PageLogin(req).render()));
-publicPageRouter.get('/register', (req, res) => res.send(new PageRegister(req).render()));
+publicPageRouter.get('/login', async (req, res) => res.send(await new PageLogin(req).render()));
+publicPageRouter.get('/register', async (req, res) => res.send(await new PageRegister(req).render()));
